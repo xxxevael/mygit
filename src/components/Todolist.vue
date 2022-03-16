@@ -14,12 +14,19 @@
 			<span>{{ active }}/{{ all }}</span>
 		</div>
 	</div>
+
+	<button @click="loading">123</button>
 </template>
 <script setup>
 import { ref } from "@vue/reactivity";
 import { computed } from "@vue/runtime-core";
 import { useMouse } from "../utils/mouse";
+import useFavicon from "../utils/favicon";
 let { x, y } = useMouse();
+let { favicon } = useFavicon();
+function loading() {
+	favicon.value = "/logo.png";
+}
 function useTodos() {
 	let title = ref("");
 	let todos = ref([
