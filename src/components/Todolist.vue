@@ -15,7 +15,7 @@
 		</div>
 	</div>
 
-	<button @click="loading">123</button>
+	<!-- <button @click="loading">123</button> -->
 </template>
 <script setup>
 import { ref } from "@vue/reactivity";
