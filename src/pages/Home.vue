@@ -1,6 +1,8 @@
 <template>
-	<h1>这是首页</h1>
-	<Todolist></Todolist>
+	<div>
+		<h1>这是首页</h1>
+		<Todolist></Todolist>
+	</div>
 </template>
 <script setup>
 import Todolist from "../components/Todolist.vue";

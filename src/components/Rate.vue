@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { defineEmits, defineProps, computed, ref } from "vue-demi";
+import { computed, ref } from "vue-demi";
 
 //组件的v-model   一般表单的v-model实现了数据的双向绑定  再自定义组件中使用v-model进行数据的双向绑定时
 // 1、先将属性名修改为 modelValue

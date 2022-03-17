@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue-demi";
 import Rate from "./components/Rate.vue";
+
 let score = ref(3);
 function update(num) {
 	score.value = num;
@@ -10,11 +11,23 @@ function update(num) {
 </script>
 
 <template>
-	<h1>你的分数是{{ score }}</h1>
+	<div>
+		<router-link to="/">首页</router-link> |
+		<router-link to="/about">关于</router-link>
+	</div>
+	<!-- <router-view></router-view> -->
+	<!-- 页面切换动画   路由页面必须要有一个根结点-->
+	<router-view v-slot="{ Component }">
+		<transition name="route" mode="out-in">
+			<component :is="Component"></component>
+		</transition>
+	</router-view>
+
+	<!-- <h1>你的分数是{{ score }}</h1>
 	<Rate v-model="score">课程评分</Rate>
 	<Rate v-model="score">
-		<img src="/public/favicon.ico" alt="" />
-	</Rate>
+		<img src="/favicon.ico" alt="" />
+	</Rate> -->
 </template>
 
 <style>

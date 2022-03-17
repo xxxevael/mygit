@@ -1,7 +1,9 @@
 <template>
-	<h1>这是关于页面</h1>
-	<h1 @click="toggle">click</h1>
-	<Rate :value="3" theme="red"></Rate>
+	<div>
+		<h1>这是关于页面</h1>
+		<h1 @click="toggle">click</h1>
+		<Rate v-model="score"></Rate>
+	</div>
 </template>
 <script setup>
 // 利用vueuse实现全屏功能
