@@ -52,6 +52,7 @@ function beforeEnter(el) {
 	el.style.transform = `translate(-${x}px,${y}px)`;
 }
 function enter(el, done) {
+	//手动触发一次重绘，开始动画
 	document.body.offsetHeight;
 	el.style.transform = `translate(0,0)`;
 	el.addEventListener("transitionend", done);
