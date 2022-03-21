@@ -1,8 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router/index'
+import store from './store/index'
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).use(store).mount('#app')
 //使用vite创建项目时 vue-tools不生效的解决方案
 const win = window
 
