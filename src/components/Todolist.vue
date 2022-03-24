@@ -37,8 +37,6 @@
 <script setup>
 import { reactive, ref } from "@vue/reactivity";
 import { computed } from "@vue/runtime-core";
-import { useMouse } from "../utils/mouse";
-import useFavicon from "../utils/favicon";
 //废纸篓动画
 let animate = reactive({
 	show: false,
@@ -67,11 +65,6 @@ function removeTodo(e, i) {
 	todos.value.splice(i, 1);
 }
 let showModal = ref(false);
-let { x, y } = useMouse();
-let { favicon } = useFavicon();
-function loading() {
-	favicon.value = "/logo.png";
-}
 
 function useTodos() {
 	let title = ref("");
@@ -122,7 +115,24 @@ function useTodos() {
 let { title, todos, addTodo, clear, active, all, allDone } = useTodos();
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+$padding: 10px;
+$white: #fff;
+ul {
+	width: 500px;
+	margin: 0 auto;
+	padding: 0;
+	li {
+		&:hover {
+			cursor: pointer;
+		}
+		list-style-type: none;
+		margin-bottom: $padding;
+		padding: $padding;
+		background: $white;
+		box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+	}
+}
 h1 {
 	color: red;
 }

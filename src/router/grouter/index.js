@@ -1,4 +1,4 @@
-import {ref,inject} from 'vue'
+import {ref} from 'vue'
 import RouterLink from './RouterLink.vue'
 import RouterView from './RouterView.vue'
 
@@ -36,4 +36,4 @@ class Router{
 }
 
 
-export {createRouter,createWebHashHistory,useRouter}
+export {createWebHashHistory,useRouter}
